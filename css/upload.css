@@ -1,0 +1,316 @@
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #1db954, #1ed760);
+            border-radius: 2px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1db954, #1ed760);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #b3b3b3;
+            font-size: 1.1rem;
+        }
+
+        .form-container {
+            background: rgba(40, 40, 40, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(60, 60, 60, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1db954;
+            box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.1);
+            background: rgba(60, 60, 60, 0.9);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: #282828;
+            color: #ffffff;
+        }
+
+        .file-upload-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .file-upload {
+            position: relative;
+            background: rgba(60, 60, 60, 0.7);
+            border: 2px dashed rgba(29, 185, 84, 0.3);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .file-upload:hover {
+            border-color: #1db954;
+            background: rgba(60, 60, 60, 0.9);
+        }
+
+        .file-upload.dragover {
+            border-color: #1ed760;
+            background: rgba(29, 185, 84, 0.1);
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-upload-content {
+            pointer-events: none;
+        }
+
+        .file-upload i {
+            font-size: 2.5rem;
+            color: #1db954;
+            margin-bottom: 15px;
+        }
+
+        .file-upload h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .file-upload p {
+            color: #b3b3b3;
+            font-size: 0.9rem;
+        }
+
+        .cover-preview {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .cover-preview img {
+            max-width: 200px;
+            max-height: 200px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 3px solid rgba(29, 185, 84, 0.3);
+        }
+
+        .audio-preview {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .audio-preview audio {
+            width: 100%;
+            max-width: 350px;
+            height: 40px;
+        }
+
+        .audio-preview audio::-webkit-media-controls-panel {
+            background-color: rgba(60, 60, 60, 0.9);
+            border-radius: 10px;
+        }
+
+        .submit-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #1db954, #1ed760);
+            color: #ffffff;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(29, 185, 84, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(29, 185, 84, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            background: rgba(60, 60, 60, 0.7);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            margin: 0px auto 10px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            color: #f44336;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success-message {
+            background: rgba(29, 185, 84, 0.1);
+            border: 1px solid rgba(29, 185, 84, 0.3);
+            color: #1db954;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .file-name {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #1db954;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .file-upload-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .form-container {
+                padding: 30px 25px;
+            }
+        }
+
+        .playlist-section {
+            background: rgba(50, 50, 50, 0.5);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .playlist-section h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .playlist-section h3 i {
+            color: #1db954;
+        }
+
+        .playlist-section p {
+            color: #b3b3b3;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
