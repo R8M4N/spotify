@@ -20,7 +20,7 @@ $randomSongs = $result->fetch_all(MYSQLI_ASSOC);
 $stmt01->close();
 
 $playlists = [];
-$queryPlaylists = "SELECT id, name FROM playlist_main";
+$queryPlaylists = "SELECT id, name FROM playlist_main ORDER BY RAND()";
 $resultPlaylists = $conn->query($queryPlaylists);
 
 if ($resultPlaylists && $resultPlaylists->num_rows > 0) {

@@ -1,0 +1,78 @@
+#history-list {
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #121212 100%);
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    display: none;
+    padding-bottom: 70px;
+}
+
+.history-loader,
+.no-history,
+.history-error {
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 16px;
+    padding: 40px 20px;
+}
+
+.history-error {
+    color: #e22134;
+}
+
+
+.track-number {
+    width: 16px;
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+}
+
+
+
+.track-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.track-time {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-left: 16px;
+    flex-shrink: 0;
+    min-width: 80px;
+    text-align: right;
+}
+
+.track-item:hover .track-title {
+    color: #1db954;
+}
+
+@media (max-width: 768px) {
+    .track-number {
+        display: none;
+    }
+    
+    .track-time {
+        font-size: 12px;
+        min-width: 60px;
+    }
+    
+    .track-title {
+        font-size: 14px;
+    }
+    
+    .track-artist {
+        font-size: 12px;
+    }
+}

@@ -30,6 +30,11 @@
     }
 
     function playSong(songpath,songtitle,songauthor,songcover,songid) {
+        if(currentSong != songpath){
+            if (songid) {
+                updateHistory(songid);
+            }
+        }
         currentSong = songpath;
         $('#player-title').text(songtitle);
         $('#player-artist').text(songauthor);

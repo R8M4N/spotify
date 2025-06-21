@@ -7,6 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/history.css">
   <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg">
 </head>
 <body>
@@ -39,7 +40,12 @@
                     <div id='nav-likes' class='nav-item'>
                         <i class='fas fa-heart'></i>
                         <span>Polubione</span>
-                    </div>                    
+                    </div> 
+                    
+                    <div id='nav-history' class='nav-item'>
+                        <i class='fas fa-clock'></i>
+                        <span>Historia</span>
+                    </div> 
                     
                     <div class='nav-item' id='logout'>
                         <i class='fas fa-right-from-bracket'></i>
@@ -117,6 +123,7 @@
                                     <i class="far fa-heart"></i>
                                 </button>
                             </div>
+                            <div id="song-comments"></div>
                             ';
                         }
                     ?>                    
@@ -127,7 +134,7 @@
         </div>
 
         <div class='box' id="likes-list"></div>
-
+        <div class='box' id="history-list"></div>
         
     </div>
 
@@ -189,5 +196,7 @@
     <script src='js/search.js'></script>
     <script src='js/playlist.js'></script>
     <script src='js/like.js'></script>
+    <script src='js/comments.js'></script>
+     <script src='js/history.js'></script>
 </body>
 </html>

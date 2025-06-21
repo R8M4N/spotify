@@ -2,17 +2,22 @@ $(document).ready(function() {
     let currentSongId = null;
     let isLiked = false;
     $('#player-image').click(function() {
-        const coverUrl = $(this).css('background-image').replace(/^url\(['"]?/, '').replace(/['"]?\)$/, '');
-        const title = $('#player-title').text().trim();
-        const artist = $('#player-artist').text().trim();
-        currentSongId = $(this).attr('data-songid');
-        $('.box').hide();
-        $('#songView').show();
-        $('#songContent').hide();
-        $('#songCoverLarge').css('background-image', 'url(' + coverUrl + ')');
-        $('#songTitleLarge').text(title);
-        $('#songArtistLarge').text(artist);
-        loadSongData(currentSongId);
+        var songId = $(this).attr('data-songid');
+        if (songId && !isNaN(songId) && Number(songId) > 0) {
+            const coverUrl = $(this).css('background-image').replace(/^url\(['"]?/, '').replace(/['"]?\)$/, '');
+            const title = $('#player-title').text().trim();
+            const artist = $('#player-artist').text().trim();
+            currentSongId = $(this).attr('data-songid');
+            $('.box').hide();
+            $('#songView').show();
+            $('#songContent').hide();
+            $('#songCoverLarge').css('background-image', 'url(' + coverUrl + ')');
+            $('#songTitleLarge').text(title);
+            $('#songArtistLarge').text(artist);
+            loadSongData(currentSongId);
+            songComments(currentSongId);
+            
+        }
     });
 
     function loadSongData(songId) {
@@ -121,5 +126,6 @@ $(document).ready(function() {
             }
         });
     });
+
 
 });
